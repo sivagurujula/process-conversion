@@ -96,7 +96,7 @@ public class CreateProcessFromJSON {
 					startNode = stepsMap.get(nextNodeId);
 					links.add(startNode);
 					visitedNodesList.add(nextNodeId);
-					createNode(startNode);
+					nodeBuilder = createNode(startNode);
 				}
 			}
 			else {
@@ -120,32 +120,32 @@ public class CreateProcessFromJSON {
 		String type = node.get("type").toString();
 		AbstractFlowNodeBuilder obj = null;
 		if(type.equals("event")) {
-			 nodeBuilder.endEvent()
+			nodeBuilder= nodeBuilder.endEvent()
 				.name(name);
 				//.id(ID);
 		}
 		else if(type.equals("gateway")) {
 			if(((JSONArray)node.get("lines")).size() >1){
-				nodeBuilder.exclusiveGateway()
+				nodeBuilder = nodeBuilder.exclusiveGateway()
 					.name(name)
 					//.id(ID)
 					.gatewayDirection(GatewayDirection.Diverging)
 					.condition("yes", "${approved}");
 			}
 			else {
-				 nodeBuilder.inclusiveGateway()
+				nodeBuilder= nodeBuilder.inclusiveGateway()
 				.name(name)
 				//.id(ID)
 				.gatewayDirection(GatewayDirection.Converging);
 			}
 		}
 		else if(type.equals("activity")) {
-			 nodeBuilder.serviceTask()
+			nodeBuilder= nodeBuilder.serviceTask()
 				.name(name)
 				//.id(ID)
 				.camundaClass("org.camunda.bpm.example.service.SaveEmployeeService");
 		}
-		return obj;
+		return nodeBuilder;
 	}
 
 }
