@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Create process with fluent BPMN model API
 
 This quickstart demonstrates how to create a process with the BPMN model API. We
@@ -187,4 +186,3 @@ Bpmn.writeModelToStream(System.out, modelInstance);
 =======
 # process-conversion
 process conversion tool
->>>>>>> 6c1ec35fbf74066ef022229be556500b174a8373
