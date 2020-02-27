@@ -1,0 +1,28 @@
+rootElement - []
+flowElement - []
+	"outgoing": []
+	"incoming": []
+    "declaredType": "startEvent",
+	"declaredType": "endEvent",
+    "declaredType": "callActivity",
+    "declaredType": "sequenceFlow",
+    "declaredType": "exclusiveGateway",
+    "declaredType": "dataObject",
+    "declaredType": "eventBasedGateway",
+    "declaredType": "intermediateCatchEvent",
+    extensionElements : "activityType": [
+                            "UserTask"
+                        ]
+                        "activityType": [
+                            "ServiceTask"
+                        ]
+
+                        "activityType": [
+                            "CalledProcess"
+                        ],
+                        "activityType": [
+                            "InlineUserTask"
+                        ]
+    "gatewayDirection": "Unspecified",
+
+outgoing.length > incoming.length then diverging else converging for simple
