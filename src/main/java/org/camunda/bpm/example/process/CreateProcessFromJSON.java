@@ -25,7 +25,7 @@ public class CreateProcessFromJSON {
 	private static AbstractFlowNodeBuilder nodeBuilder = null;
 	public static void main(String[] args) throws IOException, ParseException {
 		String path = "C:\\Siva\\Java\\IBPM\\REST Responses";
-		FileReader reader = new FileReader(path+"\\SimpleSystemTaskProcess.json");
+		FileReader reader = new FileReader(path+"\\ExclusiveGateway.json");
 	    JSONParser jsonParser = new JSONParser();
 		JSONObject jsonObject = (JSONObject) jsonParser.parse(reader);
 		JSONObject dataObject =(JSONObject) jsonObject.get("data"); 
