@@ -1,0 +1,41 @@
+BusinessProcessDiagram
+    <flow id="0f0cc844-c54d-45c4-a8eb-a9c3800d31ab" connectionType="SequenceFlow">
+    pool
+        lane
+            flowObject componentType="Activity","Event",componentType="Gateway"
+                name
+                inputPort 
+                    <flow ref="0f0cc844-c54d-45c4-a8eb-a9c3800d31ab" />
+                outputPort 
+                    <flow ref="0f0cc844-c54d-45c4-a8eb-a9c3800d31ab" />
+                <component>
+                    <eventType>1[Start]</eventType>
+                    <eventType>2[End]</eventType>
+                    <eventType>3</eventType>
+                        EventAction
+                            <actionType>1</actionType> -- Signal
+                             <actionType>2</actionType> -- Timer
+                    <!-- For componentType="Activity"-->
+                    <metricSettings itemType="4" /> -- System Task
+                    <implementationType>4</implementationType>
+                    <bpmnTaskType>3</bpmnTaskType>
+
+                    <metricSettings itemType="4" /> -- User Task
+                    <implementationType>1</implementationType>
+                    <bpmnTaskType>1</bpmnTaskType>
+
+                    <metricSettings itemType="4" />    -- Script Task
+                    <implementationType>2</implementationType>
+                    <bpmnTaskType>5</bpmnTaskType>
+
+                    <gatewayType>2</gatewayType> -- Event Gateway
+                    <splitJoinType>0</splitJoinType>
+                    
+                    <gatewayType>3</gatewayType> -- Inclusive Gateway
+                    <splitJoinType>0</splitJoinType>
+
+                    <gatewayType>1</gatewayType>     -- Exclusive Gateway
+                    <splitJoinType>0</splitJoinType>
+
+                    <gatewayType>5</gatewayType>    -- Parallel Gateway
+                    <splitJoinType>0</splitJoinType>
